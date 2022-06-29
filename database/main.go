@@ -4,17 +4,18 @@ import (
 	"fmt"
 	"log"
 
+	"github.com/zsj-dev/DouYin/database/model"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
 
 func autoMigrate(db *gorm.DB) {
 	err := db.AutoMigrate(
-	// model.User{},
-	// model.Favorite{},
-	// model.Relation{},
-	// model.Video{},
-	// model.Comment{},
+		model.User{},
+		model.Favorite{},
+		model.Relation{},
+		model.Video{},
+		model.Comment{},
 	)
 	if err != nil {
 		log.Panicf("数据库迁移异常: %v", err)
