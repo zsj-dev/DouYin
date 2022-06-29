@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+option go_package = ".;pb";
+package pb;
+
+
+message UserLoginRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message UserLoginResponse { int64 userID = 1; }
+
+
+message UserRegisterRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message UserRegisterResponse { int64 userID = 1; }
+
+message UserGetRequest {
+  int64 userID = 1;
+  int64 seeId = 2;
+}
+
+message UserGetResponse {
+  User user = 1;
+}
+
+
+
+message User{
+  int64 id = 1;
+  string name = 2;
+  int64 followCount  =3;
+  int64 followerCount =4;
+  bool  isFollow = 5;
+}
+
+
+
+service UserService {
+  rpc Login(UserLoginRequest) returns (UserLoginResponse);
+  rpc Register(UserRegisterRequest) returns (UserRegisterResponse);
+  rpc Get(UserGetRequest) returns(UserGetResponse);
+}
