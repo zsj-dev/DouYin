@@ -6,9 +6,12 @@
 - interaction_server：点赞列表、用户评论    50052
 - relation_server：关注列表、粉丝列表    50053
 
+## 使用技术栈
+
+gin,gorm,grpc,jwt/go,
 ## 开始使用
 
-
+安装安装包：app-release.apk
 
 打开四个控制台分别输入 `go run api-client/main.go` 和 `go run basic-server/main.go`  和   `go run interaction-server/main.go` 和  `go run relation-server/main.go`
 
