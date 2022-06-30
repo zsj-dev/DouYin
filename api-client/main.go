@@ -7,6 +7,7 @@ import (
 )
 
 func main() {
+	initialization.RegisterOSS()
 	initialization.SetupService()
 	r := initialization.SetupRouter()
 
