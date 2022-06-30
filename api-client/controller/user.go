@@ -90,7 +90,7 @@ func (u UserController) Register(ctx *gin.Context) {
 	if err != nil {
 		ctx.JSON(http.StatusBadRequest, gin.H{
 			"status_code": http.StatusBadRequest,
-			"status_msg":  "创建失败",
+			"status_msg":  "创建用户失败",
 			"error":       err.Error(),
 		})
 		return
@@ -129,7 +129,7 @@ func (u UserController) Info(ctx *gin.Context) {
 	if err != nil {
 		ctx.JSON(http.StatusBadRequest, gin.H{
 			"status_code": http.StatusBadRequest,
-			"status_msg":  "查询失败",
+			"status_msg":  "查询用户信息失败",
 			"error":       err.Error(),
 		})
 		return

@@ -41,7 +41,7 @@ func (u RelationController) Action(ctx *gin.Context) {
 		ctx.JSON(http.StatusBadRequest, gin.H{
 			"error":       err.Error(),
 			"status_code": http.StatusBadRequest,
-			"status_msg":  nil,
+			"status_msg":  "关注失败",
 		})
 		return
 	}
@@ -70,7 +70,7 @@ func (u RelationController) FollowList(ctx *gin.Context) {
 		ctx.JSON(http.StatusBadRequest, gin.H{
 			"error":       err.Error(),
 			"status_code": http.StatusBadRequest,
-			"status_msg":  "操作失败",
+			"status_msg":  "拉取关注列表失败",
 		})
 	}
 
@@ -109,7 +109,7 @@ func (u RelationController) FollowerList(ctx *gin.Context) {
 		ctx.JSON(http.StatusBadRequest, gin.H{
 			"error":       err.Error(),
 			"status_code": http.StatusBadRequest,
-			"status_msg":  "操作失败",
+			"status_msg":  "拉取粉丝列表失败",
 		})
 	}
 
