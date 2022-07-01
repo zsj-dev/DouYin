@@ -13,7 +13,7 @@ import (
 func RegisterMySQL() {
 	dsn := fmt.Sprintf(
 		"%s:%s@tcp(%s:%d)/%s?charset=%s&parseTime=%s&loc=%s",
-		"root", "123456", "127.0.0.1", 3306, "byte-douyin", "utf8mb4", "true", "Local",
+		"root", "123456", "127.0.0.1", 3306, "douyin", "utf8mb4", "true", "Local",
 	)
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{
 		Logger: logger.Default.LogMode(logger.Info),

@@ -11,7 +11,7 @@ func RegisterCommentRouter(r *gin.RouterGroup) {
 	group := r.Group("")
 	group.Use(middleware.JWTAuthMiddleware())
 	{
-		group.POST("/action/", commentController.Action)
-		group.GET("/list/", commentController.List)
+		group.POST("action/", commentController.Action)
+		group.GET("list/", commentController.List)
 	}
 }

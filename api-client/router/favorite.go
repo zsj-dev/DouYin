@@ -11,7 +11,7 @@ func RegisterFavoriteRouter(r *gin.RouterGroup) {
 	group := r.Group("")
 	group.Use(middleware.JWTAuthMiddleware())
 	{
-		group.POST("/action/", favController.Action)
-		group.GET("/list/", favController.List)
+		group.POST("action/", favController.Action)
+		group.GET("list/", favController.List)
 	}
 }

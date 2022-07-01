@@ -8,8 +8,8 @@ import (
 
 func RegisterUserRouter(r *gin.RouterGroup) {
 	userController := controller.NewUserController()
-	r.POST("/login/", userController.Login)
-	r.POST("/register/", userController.Register)
+	r.POST("login/", userController.Login)
+	r.POST("register/", userController.Register)
 
 	group := r.Group("")
 	group.Use(middleware.JWTAuthMiddleware())

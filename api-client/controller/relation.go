@@ -33,8 +33,8 @@ func (u RelationController) Action(ctx *gin.Context) {
 		return
 	}
 	_, err := service.RelationClient.Action(ctx, &pb.RelationActionRequest{
-		UserID:     payload.UserId,
-		FollowID:   payload.FollowId,
+		UserID:     payload.ToUserId,
+		FollowID:   payload.UserId,
 		ActionType: payload.ActionType,
 	})
 	if err != nil {

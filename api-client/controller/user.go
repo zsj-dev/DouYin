@@ -123,8 +123,8 @@ func (u UserController) Info(ctx *gin.Context) {
 		return
 	}
 	resp, err := service.UserClient.Get(ctx, &pb.UserGetRequest{
-		UserId: ctx.GetInt64("user_id"),
-		SeeId:  payload.UserId,
+		UserId: payload.UserId,
+		SeeId:  ctx.GetInt64("user_id"),
 	})
 	if err != nil {
 		ctx.JSON(http.StatusBadRequest, gin.H{

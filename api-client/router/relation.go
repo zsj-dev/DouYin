@@ -12,8 +12,8 @@ func RegisterRelationRouter(r *gin.RouterGroup) {
 	group := r.Group("")
 	group.Use(middleware.JWTAuthMiddleware())
 	{
-		group.POST("/action/", relationController.Action)
-		group.GET("/follow/list/", relationController.FollowList)
-		group.GET("/follower/list/", relationController.FollowerList)
+		group.POST("action/", relationController.Action)
+		group.GET("follow/list/", relationController.FollowList)
+		group.GET("follower/list/", relationController.FollowerList)
 	}
 }

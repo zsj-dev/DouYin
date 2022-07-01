@@ -11,7 +11,7 @@ func RegisterPublishRouter(r *gin.RouterGroup) {
 	group := r.Group("")
 	group.Use(middleware.JWTAuthMiddleware())
 	{
-		group.POST("/action/", publishController.Action)
-		group.GET("/list/", publishController.List)
+		group.POST("action/", publishController.Action)
+		group.GET("list/", publishController.List)
 	}
 }
